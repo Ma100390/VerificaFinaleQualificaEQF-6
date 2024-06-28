@@ -1,0 +1,37 @@
+<mat-toolbar class="toolbar">
+  <mat-menu #menu="matMenu">
+    <h2> - Le nostre ricette migliori abbinate con i nostri prodotti zanoli</h2>
+    <button mat-menu-item *ngFor="let formaggio of formaggi; let i = index" (click)="setSelectedCard(formaggio)">
+      <a class="nav-link" [class.active]="selectedCard === formaggio" aria-current="page" href="#">{{ (i+1) + ". " + formaggio.titolo }}</a>
+    </button>
+  </mat-menu>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu Button">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div class="text-container">
+    <span><b>Martelli Formaggi S.p.a</b></span>
+    <span>Eccellenza Italiana dal 1800</span>
+  </div>
+  
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+</mat-toolbar>
+
+<section *ngIf="selectedCard">
+  <div class="custom-card">
+    <div class="card-header">
+      {{ selectedCard.titolo }}
+    </div>
+    <div class="card-body">
+   
+      <p><strong>Ingredienti:</strong> {{ selectedCard.ingredienti }}</p>
+      <p><strong>Procedimento:</strong> {{ selectedCard.procedimento }}</p>
+      <p><strong>Difficoltà:</strong> {{ selectedCard.difficolta }}</p>
+      <img class="recipe-image" src="{{ selectedCard.immagine }}" alt="Immagine della ricetta">
+    </div>
+  </div>
+</section>
+

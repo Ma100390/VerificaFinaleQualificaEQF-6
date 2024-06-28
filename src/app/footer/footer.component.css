@@ -1,0 +1,23 @@
+.footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+  }
+  
+  .social-icons a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 10px;
+  }
+  
+  .social-icons img {
+    max-width: 24px;
+    max-height: 24px;
+  }
+  
+  .footer p {
+    margin: 0;
+    font-size: 16px;
+  }
+  
